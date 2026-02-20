@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wind Energy Prediction</title>
+    <style>
+        body { font-family: sans-serif; background: #eef2f3; text-align: center; padding: 50px; }
+        .card { background: white; padding: 30px; border-radius: 12px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        input { display: block; width: 280px; margin: 10px auto; padding: 12px; border: 1px solid #ccc; border-radius: 6px; }
+        button { background: #007bff; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        .result { margin-top: 20px; color: #28a745; font-size: 1.4em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Wind Turbine Energy Predictor</h2>
+        <form action="/predict" method="post">
+            <input type="number" step="any" name="s" placeholder="Wind Speed (m/s)" required>
+            <input type="number" step="any" name="t" placeholder="Theoretical Power (kWh)" required>
+            <input type="number" step="any" name="d" placeholder="Wind Direction (deg)" required>
+            <button type="submit">Predict Power</button>
+        </form>
+        <div class="result">{{ prediction_text }}</div>
+    </div>
+</body>
+</html>
